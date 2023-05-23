@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <style>
+        #body{
+            
+            background-image: url('mainCasinoo.png');
+            background-size: 100%;
+            background-color: black;
+    
+            
+        }
+
+
+        #main{
+            
+            
+            width: 1000px;
+            height: 700px;
+            margin-left: 250px;
+            margin-top: 100px;
+        }
+
+        #robot{
+            position: absolute;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 45px;
+            margin-left: 220px;
+            color: black;
+            font-size: 80px;
+
+        }
+
+        #slotone{
+            position: absolute;
+            background-image: url('question.png');
+            background-repeat: no-repeat;
+            background-size: 90%;
+            width: 250px;
+            height: 250px;
+            margin-left: 50px;
+            margin-top: 250px;
+            
+        }
+
+        #slottwo{
+
+            position: absolute;
+            background-image: url('question.png');
+            background-repeat: no-repeat;
+            background-size: 90%;
+            width: 250px;
+            height: 250px;
+            margin-left: 380px;
+            margin-top: 250px;
+        }
+
+        #slotthree{
+            position: absolute;
+            background-image: url('question.png');
+            background-repeat: no-repeat;
+            background-size: 90%;
+            width: 250px;
+            height: 250px;
+            margin-left: 700px;
+            margin-top: 250px;
+        }
+
+        #btn{
+            background-color: blueviolet;
+            width: 300px;
+            height: 100px;
+            font-size: 50px;
+            border: 5px solid black;
+            margin-top: 600px;
+            margin-left: 360px;
+            
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+      
+            
+
+
+    </style>
+</head>
+<body id="body"> 
+
+    <div id="main">
+        <div id="robot"> <b>Spin the Wheel</div>
+        <div id="slotone"></div>
+        <div id="slottwo"></div>
+        <div id="slotthree"></div>
+
+        <button id="btn"> <b>Spin</button>
+
+    </div>
+
+    <p class="label-score"> Score <span class="score">0</span></p>
+    <p class="label-highscore"> HighScore: <span class="highscore">0</span></p>
+
+    <script>
+        const btt = document.getElementById("btn")
+        btt.addEventListener("click", getRandomImage)
+        
+
+        function getRandomImage()
+            {
+                var randomImage = new Array();
+
+                randomImage[0] = src = ('bar.png');
+
+                randomImage[1] = src =  ('bell.png');
+
+                randomImage[2] = src =  ('diamond.png');
+
+                randomImage[3] = src =  ('heart.png');
+
+                randomImage[4] = src =  ('horse.png');
+
+                randomImage[5] = src =  ('lemon.png');
+
+                randomImage[6] = src =  ('seven.png');
+
+                randomImage[7] = src =  ('watermellon.png');
+
+
+                var number = Math.floor(Math.random()*randomImage.length);  
+                var number2 = Math.floor(Math.random()*randomImage.length);
+                var number3 = Math.floor(Math.random()*randomImage.length);
+
+                document.getElementById("slotone").innerHTML = '<img src="'+randomImage[number]+'" />';
+                document.getElementById("slottwo").innerHTML = '<img src="'+randomImage[number2]+'" />';
+                document.getElementById("slotthree").innerHTML = '<img src="'+randomImage[number3]+'" />';
+
+            }
+        
+    </script>
+    
+    
+</body>
+</html>
